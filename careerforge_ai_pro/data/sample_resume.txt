@@ -1,0 +1,11 @@
+Sample Resume for Testing
+
+Name: John Doe
+Email: john.doe@email.com
+Education: B.Tech in Computer Science, XYZ University
+CGPA: 8.5
+Skills: Python, Java, SQL, Machine Learning
+Projects: AI Chatbot, Resume Analyzer
+Experience: Internship at ABC Corp
+Certifications: AWS Certified Solutions Architect
+Achievements: Hackathon Winner

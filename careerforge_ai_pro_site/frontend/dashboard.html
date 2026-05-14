@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareerForge AI Pro | Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="page-shell">
+        <div class="topbar">
+            <div class="brand">
+                <img src="assets/logo.svg" alt="CareerForge AI Pro Logo" class="brand-logo" />
+                <div>
+                    <h1>CareerForge AI Pro Dashboard</h1>
+                    <p>View your interview readiness and progress.</p>
+                </div>
+            </div>
+            <nav class="site-nav">
+                <a href="profile.html">Profile</a>
+                <a href="interview.html">Interview</a>
+                <a href="login.html">Logout</a>
+            </nav>
+        </div>
+
+        <section class="section split-grid">
+            <div class="panel glass-panel">
+                <h3>Assessment Console</h3>
+                <p>Share your current profile and career interest so the system can give focused guidance for AI and non-technical roles.</p>
+                <form id="assessment-form" enctype="multipart/form-data">
+                    <div class="field-row two-col">
+                        <div>
+                            <label>Full Name</label>
+                            <input type="text" name="name" placeholder="Your full name" required />
+                        </div>
+                        <div>
+                            <label>Email Address</label>
+                            <input type="email" name="email" placeholder="you@example.com" required />
+                        </div>
+                    </div>
+                    <div class="field-row two-col">
+                        <div>
+                            <label>Current Role</label>
+                            <input type="text" name="current_role" placeholder="Student, Marketer, Analyst, etc." />
+                        </div>
+                        <div>
+                            <label>Interest Area</label>
+                            <input type="text" name="interest_area" placeholder="AI, Data, Product, Design, Business" />
+                        </div>
+                    </div>
+                    <div class="field-row two-col">
+                        <div>
+                            <label>Preferred Career Path</label>
+                            <input type="text" name="preferred_path" placeholder="AI Research, Product Strategy, Data Storytelling" />
+                        </div>
+                        <div>
+                            <label>Dream Company / Sector</label>
+                            <input type="text" name="company" placeholder="Tech startup, research lab, education" />
+                        </div>
+                    </div>
+                    <div class="field-row">
+                        <label>Resume Upload (PDF / DOCX)</label>
+                        <input type="file" name="resume" accept=".pdf,.docx" />
+                    </div>
+                    <div class="field-row">
+                        <label>LinkedIn Profile URL</label>
+                        <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourname" />
+                    </div>
+                    <div class="field-row">
+                        <label>What motivates you in AI or your chosen career?</label>
+                        <textarea name="motivation" rows="4" placeholder="Share your interests and goals." ></textarea>
+                    </div>
+                    <button type="button" class="button button-primary" id="submit-button">Analyze My Readiness</button>
+                </form>
+            </div>
+            <div class="panel glass-panel">
+                <h3>Dashboard Insights</h3>
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span>Overall Score</span>
+                        <strong id="overall-score">0</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Dream Company</span>
+                        <strong id="dream-score">0</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Success Probability</span>
+                        <strong id="success-score">0%</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Days to Ready</span>
+                        <strong id="days-ready">0</strong>
+                    </div>
+                </div>
+                <div class="progress-block">
+                    <label>Resume & ATS</label>
+                    <div class="progress"><div id="resume-progress" class="progress-fill"></div></div>
+                    <label>Technical Skills</label>
+                    <div class="progress"><div id="technical-progress" class="progress-fill"></div></div>
+                    <label>Communication</label>
+                    <div class="progress"><div id="communication-progress" class="progress-fill"></div></div>
+                    <label>Portfolio & GitHub</label>
+                    <div class="progress"><div id="portfolio-progress" class="progress-fill"></div></div>
+                </div>
+                <div class="download-actions">
+                    <button class="button button-primary" id="download-report">Download PDF</button>
+                    <button class="button button-secondary" id="show-qr">Generate QR</button>
+                </div>
+                <div class="qr-block hidden-panel" id="qr-block">
+                    <img id="qr-image" alt="QR Code" />
+                    <p class="caption">Scan to share your CareerForge report preview.</p>
+                </div>
+                <div class="insights-panel">
+                    <h4>Recommendations</h4>
+                    <ul id="recommendation-list"></ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

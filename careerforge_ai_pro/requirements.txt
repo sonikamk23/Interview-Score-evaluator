@@ -1,0 +1,16 @@
+streamlit
+pandas
+numpy
+plotly
+PyPDF2
+python-docx
+reportlab
+qrcode
+opencv-python
+mediapipe
+SpeechRecognition
+pyaudio
+openai
+language-tool-python
+textstat
+deepface

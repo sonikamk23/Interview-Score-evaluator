@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareerForge AI Pro | Live Interview</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="page-shell interview-shell">
+        <div class="topbar">
+            <div class="brand">
+                <img src="assets/logo.svg" alt="CareerForge AI Pro Logo" class="brand-logo" />
+                <div>
+                    <h1>Live Interview Practice</h1>
+                    <p>AI-style recruiter questions, audio responses, and confidence scoring.</p>
+                </div>
+            </div>
+            <nav class="site-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Logout</a>
+            </nav>
+        </div>
+
+        <main class="interview-main">
+            <section class="panel glass-panel interview-panel">
+                <div class="interview-header">
+                    <div>
+                        <span class="eyebrow">Live AI Interview</span>
+                        <h2>Practice 12 recruiter-style questions with audio coaching.</h2>
+                        <p>Click start, answer using your voice, and get instant feedback on confidence and communication.</p>
+                    </div>
+                    <button id="start-interview" class="button button-primary">Start Interview</button>
+                </div>
+
+                <div class="question-card glass-panel">
+                    <div class="question-meta">
+                        <span id="question-number">0 / 12</span>
+                        <p id="interview-status">Press Start Interview to begin.</p>
+                    </div>
+                    <h3 id="question-text">Your first question will appear here.</h3>
+                    <div class="control-group">
+                        <button id="replay-question" class="button button-secondary" disabled>Replay Question</button>
+                        <button id="start-recording" class="button button-primary">Start Recording</button>
+                        <button id="stop-recording" class="button button-secondary" disabled>Stop Recording</button>
+                        <button id="next-question" class="button button-primary" disabled>Next Question</button>
+                    </div>
+                    <p class="caption">The app will speak each question aloud. If your browser supports speech recognition, your transcript will appear below.</p>
+                    <p id="mic-warning" class="mic-warning"></p>
+                </div>
+
+                <div class="camera-preview-card glass-panel">
+                    <div class="camera-header">
+                        <span class="eyebrow">Camera Preview</span>
+                        <p>Use your webcam while speaking to simulate a real recruiter interview.</p>
+                    </div>
+                    <video id="camera-preview" autoplay muted playsinline></video>
+                </div>
+
+                <div class="transcript-panel glass-panel">
+                    <label>Live Transcript / Notes</label>
+                    <textarea id="transcript" placeholder="Your answer transcript will appear here if speech recognition is supported."></textarea>
+                    <audio id="audio-playback" class="audio-playback"></audio>
+                    <video id="video-playback" class="video-playback" controls hidden></video>
+                    <p class="caption">Use the transcription to improve clarity, then move to the next question.</p>
+                </div>
+            </section>
+
+            <section class="panel glass-panel feedback-panel">
+                <div class="feedback-header">
+                    <span class="eyebrow">Interview Review</span>
+                    <p>Review each answer and your live confidence scores.</p>
+                </div>
+                <div id="responses-list" class="responses-list"></div>
+
+                <div id="summary-panel" class="summary-panel hidden">
+                    <h3>Your interview score</h3>
+                    <div class="summary-grid">
+                        <div>
+                            <span>Overall</span>
+                            <strong id="overall-score">0</strong>
+                        </div>
+                        <div>
+                            <span>Confidence</span>
+                            <strong id="confidence-score">0</strong>
+                        </div>
+                        <div>
+                            <span>Communication</span>
+                            <strong id="communication-score">0</strong>
+                        </div>
+                    </div>
+                    <p id="suggestion-text">Complete the interview to see your final feedback.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/interview.js"></script>
+</body>
+</html>
